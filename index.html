@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindMap: Псора (Актуализирана визия)</title>
+    <title>MindMap: Псора (Статична визия)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -52,13 +52,6 @@
             font-weight: 700;
             font-size: 1.1em;
         }
-        .clickable-remedy {
-            cursor: pointer;
-        }
-        .clickable-remedy:hover {
-            transform: scale(1.05);
-            border-color: #f97316;
-        }
         .arrow-container {
             display: flex;
             align-items: center;
@@ -74,58 +67,6 @@
             text-align: center;
             flex: 1;
             min-width: 150px;
-        }
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .modal-content {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-            transform: scale(0.95);
-            transition: transform 0.3s ease;
-        }
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-        .modal-content h3 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: #8a1e3a;
-            margin-bottom: 1rem;
-        }
-         .modal-content h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #1d4ed8;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        .modal-content ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -161,10 +102,10 @@
             <!-- Phase A Column -->
             <div class="timeline-column">
                 <div class="mindmap-node node-phase">А. Фаза на входа</div>
-                <div onclick="showRemedyDetails('Nux Vomica')" class="mt-4 mindmap-node node-remedy clickable-remedy"><span class="remedy-key">NUX VOMICA</span></div>
+                <div class="mt-4 mindmap-node node-remedy"><span class="remedy-key">NUX VOMICA</span></div>
                 <div class="mt-2 text-sm text-gray-500">
                      <p class="font-semibold">Интоксикация</p>
-                     <span onclick="showRemedyDetails('Antimonium Crudum')" class="cursor-pointer hover:underline">Antimonium cr.</span>
+                     <span>Antimonium cr.</span>
                 </div>
             </div>
 
@@ -176,15 +117,15 @@
             <!-- Phase B Column -->
             <div class="timeline-column">
                  <div class="mindmap-node node-phase">Б. Централна фаза</div>
-                 <div onclick="showRemedyDetails('Sulfur')" class="mt-4 mindmap-node node-remedy clickable-remedy"><span class="remedy-key">SULFUR</span></div>
+                 <div class="mt-4 mindmap-node node-remedy"><span class="remedy-key">SULFUR</span></div>
                  <div class="mt-2 text-xs text-gray-500">
                     <p class="font-semibold mt-2">Фундаментално трио:</p>
-                    <span onclick="showRemedyDetails('Calcarea Carbonica')" class="cursor-pointer hover:underline">Calc-c</span>, 
-                    <span onclick="showRemedyDetails('Lycopodium')" class="cursor-pointer hover:underline">Lyc</span>
+                    <span>Calc-c</span>, 
+                    <span>Lyc</span>
                     <p class="font-semibold mt-2">"Охлаждания":</p>
-                     <span onclick="showRemedyDetails('Graphites')" class="cursor-pointer hover:underline">Graphites</span>,
-                     <span onclick="showRemedyDetails('Arsenicum Album')" class="cursor-pointer hover:underline">Ars-alb</span>,
-                     <span onclick="showRemedyDetails('Sepia')" class="cursor-pointer hover:underline">Sepia</span>
+                     <span>Graphites</span>,
+                     <span>Ars-alb</span>,
+                     <span>Sepia</span>
                 </div>
             </div>
 
@@ -197,8 +138,8 @@
             <div class="timeline-column">
                  <div class="mindmap-node node-phase" style="min-width: 180px;">В. Усложнения</div>
                   <div class="mt-4 space-y-2">
-                    <div onclick="showRemedyDetails('Aurum Metallicum')" class="mindmap-node node-remedy clickable-remedy"><span class="remedy-key">AURUM MET.</span></div>
-                    <div onclick="showRemedyDetails('Thuya Occidentalis')" class="mindmap-node node-remedy clickable-remedy"><span class="remedy-key">THUYA</span></div>
+                    <div class="mindmap-node node-remedy"><span class="remedy-key">AURUM MET.</span></div>
+                    <div class="mindmap-node node-remedy"><span class="remedy-key">THUYA</span></div>
                  </div>
                  <div class="mt-2 text-xs text-gray-500">
                     <p class="font-semibold mt-2">Дълбоки или смесени състояния</p>
@@ -214,7 +155,7 @@
             <div class="timeline-column">
                  <div class="mindmap-node node-phase">Г. Теоретичен край</div>
                  <div class="mt-4 space-y-2">
-                    <div onclick="showRemedyDetails('Psorinum')" class="mindmap-node node-remedy clickable-remedy"><span class="remedy-key">PSORINUM</span></div>
+                    <div class="mindmap-node node-remedy"><span class="remedy-key">PSORINUM</span></div>
                 </div>
                  <div class="mt-2 text-xs text-gray-500">
                     <p class="font-semibold mt-2">Нозод, който обобщава диатезата</p>
@@ -222,82 +163,5 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal for Gemini Response -->
-    <div id="remedyModal" class="modal-overlay">
-        <div class="modal-content" id="modalContent">
-            <div class="flex justify-between items-start">
-                 <h3 id="modalTitle">✨ Fiche Détaillée du Remède</h3>
-                 <button onclick="closeModal()" class="text-2xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
-            </div>
-            <div id="modalBody" class="mt-4 text-gray-700">
-                <!-- Gemini content will be loaded here -->
-            </div>
-        </div>
-    </div>
-
-<script>
-    const modal = document.getElementById('remedyModal');
-    const modalContent = document.getElementById('modalContent');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalBody = document.getElementById('modalBody');
-
-    modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-
-    function closeModal() {
-        modal.classList.remove('active');
-    }
-
-    async function showRemedyDetails(remedyName) {
-        modal.classList.add('active');
-        modalTitle.innerText = `✨ Fiche pour : ${remedyName}`;
-        modalBody.innerHTML = `
-            <div class="flex items-center justify-center p-8">
-                <svg class="animate-spin h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                <span class="ml-4 text-gray-600">Génération des informations en cours...</span>
-            </div>
-        `;
-
-        const prompt = `En tant qu'expert en homéopathie, fournis une fiche détaillée pour le remède '${remedyName}', spécifiquement dans le contexte de la diathèse psorique. La réponse doit être en français et structurée en HTML. Inclus les sections suivantes avec des balises <h4> pour les titres: 'Profil Général', 'Symptômes Clés', 'Modalités (Aggravations et Améliorations)', et 'Relation avec la Psore'. Utilise des listes à puces <ul><li> pour les points sous chaque section.`;
-
-        try {
-            let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-            const payload = { contents: chatHistory };
-            const apiKey = ""; 
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-            
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-
-            if (!response.ok) {
-                throw new Error(`Erreur API: ${response.statusText}`);
-            }
-
-            const result = await response.json();
-            
-            if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
-                const text = result.candidates[0].content.parts[0].text;
-                modalBody.innerHTML = text;
-            } else {
-                 throw new Error("Aucune réponse valide reçue de l'API.");
-            }
-
-        } catch (error) {
-            console.error("Erreur lors de l'appel à l'API Gemini:", error);
-            modalBody.innerHTML = `<p class="text-red-500">Désolé, une erreur est survenue lors de la récupération des informations. Veuillez réessayer plus tard.</p><p class="text-xs text-gray-500 mt-2">${error.message}</p>`;
-        }
-    }
-</script>
-
 </body>
 </html>
